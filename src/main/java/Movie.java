@@ -84,6 +84,7 @@ public class Movie {
         for(Movie name: list) {
             System.out.println(name.getTitle() + " : " + name.getRating());
         }
+        System.out.println("");
     }
 
 

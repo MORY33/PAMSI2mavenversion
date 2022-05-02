@@ -4,24 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Bubble.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MergeSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MoviesList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/OtherSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sortit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Zeszyt1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ListTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SortTest.java" afterDir="false" />
+    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="reading from file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sortit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sortit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SortTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +102,28 @@
       <option name="presentableId" value="Default" />
       <updated>1651487069474</updated>
     </task>
+    <task id="LOCAL-00001" summary="reading from file">
+      <created>1651508434250</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651508434251</updated>
+    </task>
+    <task id="LOCAL-00002" summary="reading from file">
+      <created>1651508634113</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651508634113</updated>
+    </task>
+    <task id="LOCAL-00003" summary="reading from file">
+      <created>1651508681460</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651508681460</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,5 +136,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="reading from file" />
+    <option name="LAST_COMMIT_MESSAGE" value="reading from file" />
   </component>
 </project>
