@@ -17,6 +17,10 @@ public class Sortit implements Runnable{
     public Sortit() {
     }
 
+    public ArrayList<Movie> getArrayAfterSorting() {
+        return myMovies;
+    }
+
 
     Movie Object = new Movie();
 
@@ -50,17 +54,61 @@ public class Sortit implements Runnable{
 
 
 
-    public ArrayList<Movie> quickSort(ArrayList<Movie> moviesToSort ) throws InterruptedException {
-        ArrayList<Movie> tempmovie = new ArrayList<Movie>();
-        System.out.println("quick sorting...");
+    public void divideArrayElements(int indexStart, int indexEnd) {
 
+        if (indexStart < indexEnd && (indexEnd - indexStart) >= 1) {
+            int middleElement = (indexEnd + indexStart) / 2;
 
+            divideArrayElements(indexStart, middleElement);
+            divideArrayElements(middleElement + 1, indexEnd);
 
-
-//        TimeUnit.SECONDS.sleep(2);
-        stop();
-        return tempmovie;
+            mergeArrayElements(indexStart, middleElement, indexEnd);
+        }
     }
+
+    public void mergeArrayElements(int indexStart, int indexMiddle, int indexEnd) {
+
+        ArrayList<Movie> tempArray = new ArrayList<Movie>();
+        ArrayList<Movie> tempmovies = new ArrayList<Movie>();
+        tempmovies = myMovies;
+
+        int getLeftIndex = indexStart;
+        int getRightIndex = indexMiddle + 1;
+
+        while (getLeftIndex <= indexMiddle && getRightIndex <= indexEnd) {
+
+            if (tempmovies.get(getLeftIndex).getRating() <= tempmovies.get(getRightIndex).getRating()) {
+
+                tempArray.add(tempmovies.get(getLeftIndex));
+                getLeftIndex++;
+
+            } else {
+
+                tempArray.add(tempmovies.get(getRightIndex));
+                getRightIndex++;
+
+            }
+        }
+
+        while (getLeftIndex <= indexMiddle) {
+            tempArray.add(tempmovies.get(getLeftIndex));
+            getLeftIndex++;
+        }
+
+        while (getRightIndex <= indexEnd) {
+            tempArray.add(tempmovies.get(getRightIndex));
+            getRightIndex++;
+        }
+
+
+        for (int i = 0; i < tempArray.size(); indexStart++) {
+            tempmovies.set(indexStart, tempArray.get(i++));
+
+        }
+
+    }
+
+
 
 
 
@@ -103,7 +151,9 @@ public class Sortit implements Runnable{
 
 //        Movie oneMovie = new Movie("BNT FCHUJ", 5);
 //        myMovies.add(oneMovie);
+        System.out.println("0");
 //        Object.printList(myMovies);
+        System.out.println("0");
 //        TimeUnit.SECONDS.sleep(2);
         stop();
     }
@@ -133,18 +183,24 @@ public class Sortit implements Runnable{
                 throw new RuntimeException(e);
             }
             if(algorithm.equals(Algorithm.QUICKSORT)){
-                //                    ArrayList<Movie> moviesToSort = new ArrayList<Movie>();
-//                    quickSort(myMovies);
                 Movie oneMovie = new Movie("BNT FCHUJ", 5);
                 myMovies.add(oneMovie);
-                quickShort(0, myMovies.size() - 1);
+//                quickShort(0, myMovies.size() - 1);
 
                 stop();
-                Object.printList(quickShort(0, myMovies.size() - 1));
+//                Object.printList(quickShort(0, myMovies.size() - 1));
+                System.out.println("Quick sorted");
 
             }
            else if(algorithm.equals(Algorithm.MERGESORT)){
                     mergeSort();
+
+                    divideArrayElements(0, myMovies.size() - 1);
+                    System.out.println("Merge Sorted");
+                    Object.printList(getArrayAfterSorting());
+                    stop();
+
+
             }
            else if (algorithm.equals(Algorithm.OTHERSORT)){
                 try {

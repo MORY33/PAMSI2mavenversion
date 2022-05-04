@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="multithreads running from Sortit class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/RunThreads.java" afterDir="false" />
+    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="added quickSort (working)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sortit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sortit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651602556463</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added quickSort (working)">
+      <created>1651676280709</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651676280709</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +164,7 @@
     <MESSAGE value="reading from file" />
     <MESSAGE value="multithreads implemented" />
     <MESSAGE value="multithreads running from Sortit class" />
-    <option name="LAST_COMMIT_MESSAGE" value="multithreads running from Sortit class" />
+    <MESSAGE value="added quickSort (working)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added quickSort (working)" />
   </component>
 </project>
