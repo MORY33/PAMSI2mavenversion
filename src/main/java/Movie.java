@@ -41,7 +41,9 @@ public class Movie {
         Movie tempMovie = new Movie();
         Movie oneMovie = new Movie();
 
+
         ArrayList<Movie> movieList = new ArrayList<Movie>();
+
 
 
         String path = "C:\\Users\\rafal\\Documents\\STUDIA\\SEM4\\PAMSI\\PAMSI2mavenversion\\src\\main\\java\\Zeszyt1.csv";

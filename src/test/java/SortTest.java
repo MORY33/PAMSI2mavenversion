@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 public class SortTest {
 //    @Test
 //    public void testSort(){
-//        Bubble bubbling = new Bubble();
+//        QuickSort bubbling = new QuickSort();
 //        MergeSort merging = new MergeSort();
 //        OtherSort othering = new OtherSort();
 //

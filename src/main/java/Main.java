@@ -9,10 +9,9 @@ public class Main {
         Menu menu = new Menu();
 //        menu.menu();
         Sortit shortit = new Sortit();
-//        shortit.runThreads();
         RunThreads runnit = new RunThreads();
         runnit.runThreads();
 
-
+        Movie movie = new Movie();
     }
 }
