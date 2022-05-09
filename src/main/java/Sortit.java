@@ -7,7 +7,7 @@ public class Sortit implements Runnable{
 
     private int id;
     private boolean exit = false;
-    private Algorithm algorithm;
+    Algorithm algorithm;
     public ArrayList<Movie> myMovies;
     public ArrayList<Movie> quickMovies;
     public ArrayList<Movie> mergeMovies;
@@ -20,6 +20,11 @@ public class Sortit implements Runnable{
 
     public Sortit(ArrayList<Movie> myMovies, Algorithm algorithm){
         this.myMovies = myMovies;
+        this.algorithm = algorithm;
+    }
+
+    public Sortit(Algorithm algorithm){
+//        this.myMovies = myMovies;
         this.algorithm = algorithm;
     }
 
@@ -56,6 +61,10 @@ public class Sortit implements Runnable{
         return myMovies;
     }
 
+    public Algorithm getAlgorithm() {
+        return algorithm;
+    }
+
     @Override
     public void run() {
 
@@ -81,26 +90,56 @@ public class Sortit implements Runnable{
                 stop();
             }
            else if (algorithm.equals(Algorithm.COMPARE)){
+//                ArrayList<Movie> temp = new ArrayList<Movie>();
+//                temp = myMovies;
+//                Movie moviemovie = new Movie("bnf ajakze", 5);
+//                temp.add(moviemovie);
+//                System.out.println("QuickSorted: \n");
+//
+//                QuickSort sorter = new QuickSort(temp, temp.size());
+//                sorter.quickShort(0, sorter.getSize() - 1);
+//                Object.printList(sorter.getQuickSorted());
+//
+//                System.out.println("MergeSorted: \n");
+//
+//                temp = null;
+//                mergeMovies = myMovies;
+//
+//                MergeSort mSorter = new MergeSort(mergeMovies, mergeMovies.size());
+////                mSorter.addMovie();
+//                mSorter.divideArrayElements(0, mSorter.getSize() - 1);
+//                Object.printList(mSorter.getMergeSorted());
+
                 ArrayList<Movie> temp = new ArrayList<Movie>();
-                temp = myMovies;
                 Movie moviemovie = new Movie("bnf ajakze", 5);
-                temp.add(moviemovie);
+//                temp.add(moviemovie);
                 System.out.println("QuickSorted: \n");
 
-                QuickSort sorter = new QuickSort(temp, temp.size());
+                ArrayList<Movie> quick = new ArrayList<Movie>();
+                ArrayList<Movie> merge = new ArrayList<Movie>();
+                ArrayList<Movie> other = new ArrayList<Movie>();
+
+                try {
+                    quick = Object.CreateList();
+                    quick.add(moviemovie);
+                    merge = Object.CreateList();
+                    other = Object.CreateList();
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+                QuickSort sorter = new QuickSort(quick, quick.size());
                 sorter.quickShort(0, sorter.getSize() - 1);
+
                 Object.printList(sorter.getQuickSorted());
+
 
                 System.out.println("MergeSorted: \n");
 
-                temp = null;
-                mergeMovies = myMovies;
-
-                MergeSort mSorter = new MergeSort(mergeMovies, mergeMovies.size());
-//                mSorter.addMovie();
+                MergeSort mSorter = new MergeSort(merge, merge.size());
                 mSorter.divideArrayElements(0, mSorter.getSize() - 1);
                 Object.printList(mSorter.getMergeSorted());
-
 
 
 

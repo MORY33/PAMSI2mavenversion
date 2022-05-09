@@ -7,6 +7,7 @@ public class MergeSort extends Sortit {
 
     public MergeSort(ArrayList<Movie> mergeSorted, int size) {
         this.mergeSorted = mergeSorted;
+
         this.size = size;
     }
 

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="added mergeSort (working)[probably]">
+    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="added thread, trying to deal with inheritance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MergeSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuickSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RunThreads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunThreads.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sortit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sortit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SortTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651689292031</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added thread, trying to deal with inheritance">
+      <created>1652127742766</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1652127742766</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,7 +183,8 @@
     <MESSAGE value="multithreads running from Sortit class" />
     <MESSAGE value="added quickSort (working)" />
     <MESSAGE value="added mergeSort (working)[probably]" />
-    <option name="LAST_COMMIT_MESSAGE" value="added mergeSort (working)[probably]" />
+    <MESSAGE value="added thread, trying to deal with inheritance" />
+    <option name="LAST_COMMIT_MESSAGE" value="added thread, trying to deal with inheritance" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

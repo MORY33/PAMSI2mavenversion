@@ -13,10 +13,15 @@ public class RunThreads {
         Runnable[] runners = new Runnable[4];
         Thread[] threads = new Thread[4];
 
-        runners[0] = new Sortit(Object.CreateList(), Algorithm.QUICKSORT);
-        runners[1] = new Sortit(Object.CreateList(), Algorithm.MERGESORT);
-        runners[2]= new Sortit(Object.CreateList(), Algorithm.OTHERSORT);
-        runners[3] = new Sortit(Object.CreateList(), Algorithm.COMPARE);
+//        runners[0] = new Sortit(Object.CreateList(), Algorithm.QUICKSORT);
+//        runners[1] = new Sortit(Object.CreateList(), Algorithm.MERGESORT);
+//        runners[2]= new Sortit(Object.CreateList(), Algorithm.OTHERSORT);
+//        runners[3] = new Sortit(Object.CreateList(), Algorithm.COMPARE);
+
+        runners[0] = new Sortit(Algorithm.QUICKSORT);
+        runners[1] = new Sortit(Algorithm.MERGESORT);
+        runners[2]= new Sortit(Algorithm.OTHERSORT);
+        runners[3] = new Sortit(Algorithm.COMPARE);
 
         //creates and run all threads
         for (int i=0; i<4; i++){

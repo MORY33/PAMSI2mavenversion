@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class QuickSort extends Sortit {
-    private final int size;
+    private int size;
     private ArrayList<Movie> quickSorted;
 
     public QuickSort(ArrayList<Movie> quickSorted, int size) {
@@ -10,10 +10,12 @@ public class QuickSort extends Sortit {
         this.size = size;
     }
 
-    public QuickSort(int size) {
-        super();
-        this.size = size;
-    }
+
+
+//    public QuickSort(ArrayList<Movie> quickSorted, Algorithm algorithm, int size) {
+//        super(quickSorted, algorithm);
+//        this.size = size;
+//    }
 
     Movie bnt = new Movie("Bnt fchuj", 4);
 
@@ -55,4 +57,5 @@ public class QuickSort extends Sortit {
     public ArrayList<Movie> getQuickSorted() {
         return quickSorted;
     }
+
 }
