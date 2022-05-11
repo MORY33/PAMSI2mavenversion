@@ -1,54 +1,71 @@
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.concurrent.TimeUnit;
 
-public class Sortit implements Runnable{
+public class Sortit{
 
     private int id;
-    private boolean exit = false;
+    public boolean exit = false;
     Algorithm algorithm;
     public ArrayList<Movie> myMovies;
-    public ArrayList<Movie> quickMovies;
-    public ArrayList<Movie> mergeMovies;
-    public ArrayList<Movie> otherMovies;
+    public Movie Object = new Movie();
+
+    public QuickSort sorter;
+    public MergeSort mSorter;
+    public OtherSort oSorter;
     private int size;
+
+
 
     public int getSize() {
         return size;
     }
 
-    public Sortit(ArrayList<Movie> myMovies, Algorithm algorithm){
-        this.myMovies = myMovies;
-        this.algorithm = algorithm;
+
+    public Sortit() throws IOException {
+        sorter = new QuickSort(Object.CreateList(), Object.CreateList().size());
+        mSorter = new MergeSort(Object.CreateList(), Object.CreateList().size());
+        oSorter = new OtherSort(Object.CreateList(), Object.CreateList().size());
     }
 
-    public Sortit(Algorithm algorithm){
-//        this.myMovies = myMovies;
-        this.algorithm = algorithm;
-    }
-
-
-
-    public Sortit() {
-    }
 
 
     public ArrayList<Movie> getArrayAfterSorting() {
         return myMovies;
     }
 
-    Movie Object = new Movie();
 
+    public void runSort() throws IOException, InterruptedException{
 
+            Runnable[] runners = new Runnable[3];
+            Thread[] threads = new Thread[3];
 
-    public void otherSort() throws InterruptedException {
-        System.out.println("other sorting...");
-        Movie oneMovie = new Movie("BNT FCHUJ", 5);
-        myMovies.add(oneMovie);
-//        TimeUnit.SECONDS.sleep(12);
-        stop();
-//        Object.printList(myMovies);
+            runners[0] = sorter;
+            runners[1] = mSorter;
+            runners[2]= oSorter;
+
+            //creates and run all threads
+            for (int i=0; i<3; i++){
+                threads[i] = new Thread(runners[i]);
+            }
+
+            for (int i=0; i<3; i++){
+                threads[i].start();
+            }
+
+            for (Thread thread : threads) {
+                thread.join();
+            }
+
+//            compare();
+//        Object.CreateList();
+//        Object.printList(Object.CreateList());
+    }
+
+    public void compare(){
+        System.out.println("Quick sorted: \n");
+        Object.printList(sorter.getQuickSorted());
+        System.out.println("Merge sorted: \n");
+        Object.printList(mSorter.getMergeSorted());
     }
 
 
@@ -63,93 +80,6 @@ public class Sortit implements Runnable{
 
     public Algorithm getAlgorithm() {
         return algorithm;
-    }
-
-    @Override
-    public void run() {
-
-        while(!exit){
-
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            if(algorithm.equals(Algorithm.QUICKSORT)){
-
-                stop();
-
-            }
-           else if(algorithm.equals(Algorithm.MERGESORT)){
-
-                    stop();
-
-            }
-           else if (algorithm.equals(Algorithm.OTHERSORT)){
-                System.out.println("Other sorted");
-                stop();
-            }
-           else if (algorithm.equals(Algorithm.COMPARE)){
-//                ArrayList<Movie> temp = new ArrayList<Movie>();
-//                temp = myMovies;
-//                Movie moviemovie = new Movie("bnf ajakze", 5);
-//                temp.add(moviemovie);
-//                System.out.println("QuickSorted: \n");
-//
-//                QuickSort sorter = new QuickSort(temp, temp.size());
-//                sorter.quickShort(0, sorter.getSize() - 1);
-//                Object.printList(sorter.getQuickSorted());
-//
-//                System.out.println("MergeSorted: \n");
-//
-//                temp = null;
-//                mergeMovies = myMovies;
-//
-//                MergeSort mSorter = new MergeSort(mergeMovies, mergeMovies.size());
-////                mSorter.addMovie();
-//                mSorter.divideArrayElements(0, mSorter.getSize() - 1);
-//                Object.printList(mSorter.getMergeSorted());
-
-                ArrayList<Movie> temp = new ArrayList<Movie>();
-                Movie moviemovie = new Movie("bnf ajakze", 5);
-//                temp.add(moviemovie);
-                System.out.println("QuickSorted: \n");
-
-                ArrayList<Movie> quick = new ArrayList<Movie>();
-                ArrayList<Movie> merge = new ArrayList<Movie>();
-                ArrayList<Movie> other = new ArrayList<Movie>();
-
-                try {
-                    quick = Object.CreateList();
-                    quick.add(moviemovie);
-                    merge = Object.CreateList();
-                    other = Object.CreateList();
-
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-
-                QuickSort sorter = new QuickSort(quick, quick.size());
-                sorter.quickShort(0, sorter.getSize() - 1);
-
-                Object.printList(sorter.getQuickSorted());
-
-
-                System.out.println("MergeSorted: \n");
-
-                MergeSort mSorter = new MergeSort(merge, merge.size());
-                mSorter.divideArrayElements(0, mSorter.getSize() - 1);
-                Object.printList(mSorter.getMergeSorted());
-
-
-
-                stop();
-
-            }
-
-        }
-
-
     }
 
 }

@@ -1,13 +1,14 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MergeSort extends Sortit {
+public class MergeSort implements Runnable{
     private final int size;
     private ArrayList<Movie> mergeSorted;
+    public boolean exit;
 
-    public MergeSort(ArrayList<Movie> mergeSorted, int size) {
+    public MergeSort(ArrayList<Movie> mergeSorted, int size) throws IOException {
         this.mergeSorted = mergeSorted;
-
         this.size = size;
     }
 
@@ -17,12 +18,11 @@ public class MergeSort extends Sortit {
 
     Movie bnt = new Movie("Bnt fchuj", 6);
 
-    public void addMovie(){
+    public void addMovie() {
 //        mergeSorted = mergeSorted.add(10, "bntfchuj");
         Movie oneMovie = new Movie("Bnt fest", 9);
         mergeSorted.add(oneMovie);
     }
-
 
 
     public ArrayList<Movie> getMergeSorted() {
@@ -83,4 +83,26 @@ public class MergeSort extends Sortit {
 
     }
 
+    public void stop()
+    {
+        exit = true;
+    }
+
+    @Override
+    public void run() {
+        while(!exit){
+
+            try {
+                Thread.sleep(1000);
+
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+            divideArrayElements(0, size - 1);
+            stop();
+        }
+    }
+
 }
+

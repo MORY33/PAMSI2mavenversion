@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="added thread, trying to deal with inheritance">
+    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="finally working on different lists (constructor inheritance is a fairy tale)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OtherSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OtherSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuickSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RunThreads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunThreads.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sortit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sortit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Zeszyt1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zeszyt1.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652127742766</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finally working on different lists (constructor inheritance is a fairy tale)">
+      <created>1652130082871</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1652130082871</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,35 +195,64 @@
     <MESSAGE value="added quickSort (working)" />
     <MESSAGE value="added mergeSort (working)[probably]" />
     <MESSAGE value="added thread, trying to deal with inheritance" />
-    <option name="LAST_COMMIT_MESSAGE" value="added thread, trying to deal with inheritance" />
+    <MESSAGE value="finally working on different lists (constructor inheritance is a fairy tale)" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally working on different lists (constructor inheritance is a fairy tale)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Sortit.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunThreads.java</url>
-          <line>15</line>
+          <line>19</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunThreads.java</url>
-          <line>18</line>
+          <line>22</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunThreads.java</url>
-          <line>16</line>
+          <line>20</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunThreads.java</url>
-          <line>17</line>
+          <line>21</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/QuickSort.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/QuickSort.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/QuickSort.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Movie.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="18" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/QuickSort.java</url>
+          <line>9</line>
+          <properties class="QuickSort" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

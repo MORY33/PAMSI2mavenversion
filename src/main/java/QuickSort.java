@@ -1,31 +1,22 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class QuickSort extends Sortit {
+public class QuickSort implements Runnable{
     private int size;
     private ArrayList<Movie> quickSorted;
 
-    public QuickSort(ArrayList<Movie> quickSorted, int size) {
+    public boolean exit;
+    public QuickSort(ArrayList<Movie> quickSorted, int size) throws IOException {
         this.quickSorted = quickSorted;
         this.size = size;
     }
 
 
-
-//    public QuickSort(ArrayList<Movie> quickSorted, Algorithm algorithm, int size) {
-//        super(quickSorted, algorithm);
-//        this.size = size;
-//    }
-
-    Movie bnt = new Movie("Bnt fchuj", 4);
-
     public int getSize() {
         return size;
     }
 
-    public void addMovie(){
-        quickSorted.add(bnt);
-    }
 
     public void quickShort(int lewy, int prawy) {
         int i = lewy;
@@ -57,5 +48,30 @@ public class QuickSort extends Sortit {
     public ArrayList<Movie> getQuickSorted() {
         return quickSorted;
     }
+
+
+    public void stop()
+    {
+        exit = true;
+    }
+
+    @Override
+    public void run() {
+        while(!exit){
+
+            try {
+                Thread.sleep(1000);
+
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+            quickShort(0, size - 1);
+            stop();
+        }
+    }
+
+
+
 
 }

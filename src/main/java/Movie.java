@@ -57,7 +57,6 @@ public class Movie {
                 if(line.trim().indexOf("movie") == 1)
                     continue;
                 String[] values = line.split(",");
-//                System.out.println(values[0] + " : " + values[1]);
 
                 if (2 > values.length){
                     continue;
@@ -78,9 +77,10 @@ public class Movie {
             e.printStackTrace();
         }
 
-//        printList(movieList);
         return movieList;
     }
+
+
 
     public void printList(ArrayList<Movie> list){
         System.out.println(" ");
