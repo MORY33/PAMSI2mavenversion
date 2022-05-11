@@ -6,6 +6,7 @@ public class QuickSort implements Runnable{
     private int size;
     private ArrayList<Movie> quickSorted;
 
+    public long elapsedTime;
     public boolean exit;
     public QuickSort(ArrayList<Movie> quickSorted, int size) throws IOException {
         this.quickSorted = quickSorted;
@@ -49,6 +50,9 @@ public class QuickSort implements Runnable{
         return quickSorted;
     }
 
+    public double getTime(){
+        return elapsedTime*Math.pow(10, -6);
+    }
 
     public void stop()
     {
@@ -66,7 +70,11 @@ public class QuickSort implements Runnable{
                 throw new RuntimeException(e);
             }
 
+
+            long start = System.nanoTime();
             quickShort(0, size - 1);
+            elapsedTime = System.nanoTime() - start;
+
             stop();
         }
     }

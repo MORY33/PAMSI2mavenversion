@@ -1,11 +1,12 @@
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class MergeSort implements Runnable{
     private final int size;
     private ArrayList<Movie> mergeSorted;
     public boolean exit;
+
+    public long elapsedTime;
 
     public MergeSort(ArrayList<Movie> mergeSorted, int size) throws IOException {
         this.mergeSorted = mergeSorted;
@@ -88,6 +89,9 @@ public class MergeSort implements Runnable{
         exit = true;
     }
 
+    public double getTime(){
+       return elapsedTime*Math.pow(10, -6);
+    }
     @Override
     public void run() {
         while(!exit){
@@ -99,7 +103,9 @@ public class MergeSort implements Runnable{
                 throw new RuntimeException(e);
             }
 
+            long start = System.nanoTime();
             divideArrayElements(0, size - 1);
+            elapsedTime = System.nanoTime() - start;
             stop();
         }
     }

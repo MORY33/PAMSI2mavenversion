@@ -17,14 +17,13 @@ public class OtherSort implements Runnable {
         return size;
     }
 
-    public void sortinggg(){
-        System.out.println("soritng");
-    }
+
 
     public void stop()
     {
         exit = true;
     }
+
 
 
     @Override

@@ -11,9 +11,11 @@ public class Main {
         Movie movie = new Movie();
         ArrayList<Movie> arej = new ArrayList<Movie>();
 
+
+
         Sortit shortuj = null;
         try {
-            shortuj = new Sortit();
+            shortuj = new Sortit(menu.menu());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

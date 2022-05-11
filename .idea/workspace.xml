@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="finally working on different lists (constructor inheritance is a fairy tale)">
+    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="comparing lists in main, kinda git">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MergeSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/OtherSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OtherSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RunThreads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunThreads.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sortit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sortit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Zeszyt1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zeszyt1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/rafal/Documents/STUDIA/SEM4/PAMSI/Projekt2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -174,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652130082871</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="comparing lists in main, kinda git">
+      <created>1652264321837</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652264321837</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +204,8 @@
     <MESSAGE value="added mergeSort (working)[probably]" />
     <MESSAGE value="added thread, trying to deal with inheritance" />
     <MESSAGE value="finally working on different lists (constructor inheritance is a fairy tale)" />
-    <option name="LAST_COMMIT_MESSAGE" value="finally working on different lists (constructor inheritance is a fairy tale)" />
+    <MESSAGE value="comparing lists in main, kinda git" />
+    <option name="LAST_COMMIT_MESSAGE" value="comparing lists in main, kinda git" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -222,39 +231,30 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/QuickSort.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/QuickSort.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/QuickSort.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/src/main/java/Movie.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Movie.java</url>
-          <line>55</line>
+          <line>132</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Movie.java</url>
+          <line>134</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="18" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/QuickSort.java</url>
-          <line>9</line>
-          <properties class="QuickSort" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="MergeSort" memberName="elapsedTime" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

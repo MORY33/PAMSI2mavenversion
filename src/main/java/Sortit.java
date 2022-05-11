@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class Sortit{
 
-    private int id;
+    private final int id;
+    //    private int id;
     public boolean exit = false;
     Algorithm algorithm;
     public ArrayList<Movie> myMovies;
@@ -21,10 +22,11 @@ public class Sortit{
     }
 
 
-    public Sortit() throws IOException {
-        sorter = new QuickSort(Object.CreateList(), Object.CreateList().size());
-        mSorter = new MergeSort(Object.CreateList(), Object.CreateList().size());
-        oSorter = new OtherSort(Object.CreateList(), Object.CreateList().size());
+    public Sortit(int id) throws IOException {
+        this.id = id;
+        sorter = new QuickSort(Object.CreateList(id), Object.CreateList(id).size());
+        mSorter = new MergeSort(Object.CreateList(id), Object.CreateList(id).size());
+        oSorter = new OtherSort(Object.CreateList(id), Object.CreateList(id).size());
     }
 
 
@@ -56,16 +58,17 @@ public class Sortit{
                 thread.join();
             }
 
-//            compare();
-//        Object.CreateList();
-//        Object.printList(Object.CreateList());
     }
 
+
     public void compare(){
-        System.out.println("Quick sorted: \n");
-        Object.printList(sorter.getQuickSorted());
-        System.out.println("Merge sorted: \n");
-        Object.printList(mSorter.getMergeSorted());
+        System.out.println("Quick sorted: ");
+//        Object.printList(sorter.getQuickSorted());
+        System.out.println("Quick sort needed: " + sorter.getTime() +  " ms to sort given list");
+        System.out.println("Merge sorted: ");
+//        Object.printList(mSorter.getMergeSorted());
+        System.out.println("Merge sort needed: " + mSorter.getTime() + " ms to sort given list");
+
     }
 
 
