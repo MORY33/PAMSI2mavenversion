@@ -105,15 +105,14 @@ public class Movie {
                 if(line.trim().indexOf("movie") == 0 || line.trim().indexOf("movie") == 1 || line.trim().indexOf("movie") == 2)
                     continue;
 
-//                if (line.contains(",")){
-//                    regexCounter++;
-//                }
                 String[] values = line.split(",");
                 String helpful;
 
+                if (values[values.length-1]=="" || !values[values.length-1].endsWith(".0")){
+                    continue;
+                }
 
-
-                if (values.length > 3){
+                else if (values.length > 3 && values[values.length-1]!= ""){
 //                    tempMovie.setTitle(values[1] + values[values.length-2]);
 
                     for (int i=1; i<= values.length-2;i++){
@@ -125,7 +124,7 @@ public class Movie {
                     oneMovie = new Movie(tempMovie.getTitle(), tempMovie.getRating());
                     movieList.add(oneMovie);
                 }
-                else if (3 > values.length){
+                else if (3 > values.length || values[1]=="" || values[2]==""){
                     continue;
                 }
                 else{
@@ -135,7 +134,7 @@ public class Movie {
                     movieList.add(oneMovie);
                 }
                 counter ++;
-
+                title ="";
             }
         }
         catch (FileNotFoundException e){

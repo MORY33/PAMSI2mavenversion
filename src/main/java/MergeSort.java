@@ -17,6 +17,11 @@ public class MergeSort implements Runnable{
         return size;
     }
 
+    public void clearArray(){
+        mergeSorted = null;
+    }
+
+
     Movie bnt = new Movie("Bnt fchuj", 6);
 
     public void addMovie() {
@@ -109,6 +114,7 @@ public class MergeSort implements Runnable{
             stop();
         }
     }
+
 
 }
 

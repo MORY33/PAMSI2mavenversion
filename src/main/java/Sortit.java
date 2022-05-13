@@ -24,6 +24,8 @@ public class Sortit{
 
     public Sortit(int id) throws IOException {
         this.id = id;
+//        myMovies = Object.CreateList(id);
+//        sorter = new QuickSort(myMovies, myMovies.size());
         sorter = new QuickSort(Object.CreateList(id), Object.CreateList(id).size());
         mSorter = new MergeSort(Object.CreateList(id), Object.CreateList(id).size());
         oSorter = new OtherSort(Object.CreateList(id), Object.CreateList(id).size());
@@ -65,6 +67,7 @@ public class Sortit{
         System.out.println("Quick sorted: ");
 //        Object.printList(sorter.getQuickSorted());
         System.out.println("Quick sort needed: " + sorter.getTime() +  " ms to sort given list");
+//        mSorter.clearArray();
         System.out.println("Merge sorted: ");
 //        Object.printList(mSorter.getMergeSorted());
         System.out.println("Merge sort needed: " + mSorter.getTime() + " ms to sort given list");
