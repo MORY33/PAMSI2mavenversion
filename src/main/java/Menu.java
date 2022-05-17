@@ -16,7 +16,7 @@ public class Menu {
 
         switch(a){
             case 0:
-                listSize=40000;
+                listSize=sc.nextInt();
                 break;
             case 1:
                 listSize=10000;

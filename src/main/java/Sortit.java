@@ -26,12 +26,15 @@ public class Sortit{
         this.id = id;
 //        myMovies = Object.CreateList(id);
 //        sorter = new QuickSort(myMovies, myMovies.size());
+        size  = Object.CreateList(id).size();
         sorter = new QuickSort(Object.CreateList(id), Object.CreateList(id).size());
         mSorter = new MergeSort(Object.CreateList(id), Object.CreateList(id).size());
         oSorter = new OtherSort(Object.CreateList(id), Object.CreateList(id).size());
     }
 
-
+    public Movie getObject() {
+        return Object;
+    }
 
     public ArrayList<Movie> getArrayAfterSorting() {
         return myMovies;
@@ -63,7 +66,7 @@ public class Sortit{
     }
 
 
-    public void compare(){
+    public void compare() throws IOException {
         System.out.println("Quick sorted: ");
 //        Object.printList(sorter.getQuickSorted());
         System.out.println("Quick sort needed: " + sorter.getTime() +  " ms to sort given list");
@@ -71,7 +74,33 @@ public class Sortit{
         System.out.println("Merge sorted: ");
 //        Object.printList(mSorter.getMergeSorted());
         System.out.println("Merge sort needed: " + mSorter.getTime() + " ms to sort given list");
+        System.out.println("Mean value: " + getMeanValue());
+        System.out.println("Median value: " + getMedian());
 
+    }
+
+
+    public double getMeanValue() throws IOException {
+        double mean;
+        double ratings = 0;
+        for (Movie objects : Object.CreateList(id)){
+            ratings+=objects.getRating();
+        }
+        mean = ratings / Object.CreateList(id).size();
+        return mean;
+    }
+
+    public double getMedian(){
+        double median;
+
+        if (id%2 == 0){
+            median = (sorter.getQuickSorted().get(id/2).getRating() + sorter.getQuickSorted().get(id/2 - 1).getRating())/2;
+        }
+        else {
+            median = sorter.getQuickSorted().get(id/2).getRating();
+        }
+
+        return median;
     }
 
 

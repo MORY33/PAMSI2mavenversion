@@ -54,6 +54,8 @@ public class QuickSort implements Runnable{
         return elapsedTime*Math.pow(10, -6);
     }
 
+
+
     public void stop()
     {
         exit = true;
@@ -74,6 +76,7 @@ public class QuickSort implements Runnable{
             long start = System.nanoTime();
             quickShort(0, size - 1);
             elapsedTime = System.nanoTime() - start;
+
 
             stop();
         }

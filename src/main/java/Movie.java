@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Movie {
     private double rating;
     private String title;
+//    public int counter;
 
     public Movie(String title, double rating) {
         this.title = title;
@@ -38,49 +39,6 @@ public class Movie {
     }
 
 
-//    public ArrayList<Movie> CreateList() throws IOException {
-//        Movie tempMovie = new Movie();
-//        Movie oneMovie = new Movie();
-//
-//
-//        ArrayList<Movie> movieList = new ArrayList<Movie>();
-//
-//
-//
-//        String path = "C:\\Users\\rafal\\Documents\\STUDIA\\SEM4\\PAMSI\\PAMSI2mavenversion\\src\\main\\java\\Zeszyt1.csv";
-//
-////        C:\Users\rafal\Documents\STUDIA\SEM4\PAMSI\PAMSI2mavenversion\src\main\java
-//        String line = null;
-//
-//        try {
-//            BufferedReader br = new BufferedReader(new FileReader(path));
-//            while ((line = br.readLine()) != null) {
-//                if(line.trim().indexOf("movie") == 1)
-//                    continue;
-//                String[] values = line.split(",");
-//
-//                if (2 > values.length){
-//                    continue;
-//                }
-//                else{
-//                    tempMovie.setTitle(values[0]);
-//                    tempMovie.setRating(Integer.parseInt(values[1]));
-//                    oneMovie = new Movie(tempMovie.getTitle(), tempMovie.getRating());
-//                    movieList.add(oneMovie);
-//                }
-//
-//            }
-//        }
-//        catch (FileNotFoundException e){
-//            e.printStackTrace();
-//        }
-//        catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return movieList;
-//    }
-
     public ArrayList<Movie> CreateList(int row) throws IOException {
         Movie tempMovie = new Movie();
         Movie oneMovie = new Movie();
@@ -91,7 +49,7 @@ public class Movie {
 
 
 
-        String path = "C:\\Users\\rafal\\Documents\\STUDIA\\SEM4\\PAMSI\\PAMSI2mavenversion\\src\\main\\java\\dane.csv";
+        String path = "C:\\Users\\rafal\\Documents\\STUDIA\\SEM4\\PAMSI\\PAMSI2mavenversion\\src\\main\\java\\Zeszyt1.csv";
 
 
 
