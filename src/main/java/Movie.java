@@ -49,7 +49,7 @@ public class Movie {
 
 
 
-        String path = "C:\\Users\\rafal\\Documents\\STUDIA\\SEM4\\PAMSI\\PAMSI2mavenversion\\src\\main\\java\\Zeszyt1.csv";
+        String path = "C:\\Users\\rafal\\Documents\\STUDIA\\SEM4\\PAMSI\\PAMSI2mavenversion\\src\\main\\java\\dane.csv";
 
 
 

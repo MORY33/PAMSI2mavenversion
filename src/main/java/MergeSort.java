@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class MergeSort implements Runnable{
     private final int size;
     private ArrayList<Movie> mergeSorted;
+
     public boolean exit;
 
     public long elapsedTime;

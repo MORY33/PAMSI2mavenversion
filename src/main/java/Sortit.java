@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Sortit{
@@ -74,6 +75,10 @@ public class Sortit{
         System.out.println("Merge sorted: ");
 //        Object.printList(mSorter.getMergeSorted());
         System.out.println("Merge sort needed: " + mSorter.getTime() + " ms to sort given list");
+
+        System.out.println("Other sorted: ");
+        Object.printList(oSorter.getSortedArray());
+
         System.out.println("Mean value: " + getMeanValue());
         System.out.println("Median value: " + getMedian());
 
@@ -93,11 +98,11 @@ public class Sortit{
     public double getMedian(){
         double median;
 
-        if (id%2 == 0){
-            median = (sorter.getQuickSorted().get(id/2).getRating() + sorter.getQuickSorted().get(id/2 - 1).getRating())/2;
+        if (size%2 == 0){
+            median = (sorter.getQuickSorted().get(size/2).getRating() + sorter.getQuickSorted().get((size/2) - 1).getRating())/2;
         }
         else {
-            median = sorter.getQuickSorted().get(id/2).getRating();
+            median = sorter.getQuickSorted().get(size/2).getRating();
         }
 
         return median;
