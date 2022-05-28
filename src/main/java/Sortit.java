@@ -78,6 +78,8 @@ public class Sortit{
 
         System.out.println("Other sorted: ");
 //        Object.printList(oSorter.getSortedArray());
+
+
         System.out.println("Merge sort needed: " + oSorter.getTime() + " ms to sort given list\n");
         System.out.println("Mean value: " + getMeanValue());
         System.out.println("Median value: " + getMedian() +"\n");
@@ -95,53 +97,55 @@ public class Sortit{
         return mean;
     }
 
-//    public double getMedian(){
-//        double median;
-//
-//        System.out.println("Median for QuickSorted: ");
-//        if (size%2 == 0){
-//            median = (sorter.getQuickSorted().get(size/2).getRating() + sorter.getQuickSorted().get((size/2) - 1).getRating())/2;
-//        }
-//        else {
-//            median = sorter.getQuickSorted().get(size/2).getRating();
-//        }
-//
-//        return median;
-//    }
 
 
     public double getMedian(){
-        double median;
-
+        double quickMedian;
+        double mergeMedian;
+        double otherMedian;
+        double median = 0;
 
         if (size%2 == 0){
-            median = (sorter.getQuickSorted().get(size/2).getRating() + sorter.getQuickSorted().get((size/2) - 1).getRating())/2;
+            quickMedian = (sorter.getQuickSorted().get(size/2).getRating() + sorter.getQuickSorted().get((size/2) - 1).getRating())/2;
         }
         else {
-            median = sorter.getQuickSorted().get(size/2).getRating();
+            quickMedian = sorter.getQuickSorted().get(size/2).getRating();
         }
-//        System.out.println("Median for QuickSorted: " + median);
-//
-//        if (size%2 == 0){
-//            median = (mSorter.getMergeSorted().get(size/2).getRating() + mSorter.getMergeSorted().get((size/2) - 1).getRating())/2;
-//        }
-//        else {
-//            median = mSorter.getMergeSorted().get(size/2).getRating();
-//        }
-//        System.out.println("Median for MergeSorted: " + median);
-//
-//        if (size%2 == 0){
-//            median = (oSorter.getOtherSorted().get(size/2).getRating() + oSorter.getOtherSorted().get((size/2) - 1).getRating())/2;
-//        }
-//        else {
-//            median = oSorter.getOtherSorted().get(size/2).getRating();
-//        }
-//        System.out.println("Median for BucketSorted: " + median);
 
+        if (size%2 == 0){
+            mergeMedian = (mSorter.getMergeSorted().get(size/2).getRating() + mSorter.getMergeSorted().get((size/2) - 1).getRating())/2;
+        }
+        else {
+            mergeMedian = mSorter.getMergeSorted().get(size/2).getRating();
+        }
+
+        if (size%2 == 0){
+            otherMedian = (oSorter.getSortedArray().get(size/2).getRating() + oSorter.getSortedArray().get((size/2) - 1).getRating())/2;
+        }
+        else {
+            otherMedian = oSorter.getSortedArray().get(size/2).getRating();
+        }
+
+      if(isEqual(mergeMedian, quickMedian) && isEqual(quickMedian,otherMedian)){
+          median = mergeMedian;
+          System.out.println("Medians from all methods are the same!");
+      }
+      else{
+          System.out.println("Ehh, something is broken and medians are not the same:(");
+      }
 
         return median;
     }
 
+    public boolean isEqual(double a, double b){
+
+        double epsilon = 0.000001d;
+
+        if (Math.abs(a-b) < epsilon) {
+            return true;
+        }
+        return false;
+    }
 
     public void stop()
     {

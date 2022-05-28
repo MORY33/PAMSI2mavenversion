@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="refactored menu, might clean later">
+    <list default="true" id="b85ae98f-6c81-41ef-8988-6d67f9003b30" name="Changes" comment="made more sense">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sortit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sortit.java" afterDir="false" />
@@ -254,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653745801673</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="made more sense">
+      <created>1653746714103</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1653746714103</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +290,8 @@
     <MESSAGE value="finally bucketSort added" />
     <MESSAGE value="counting bucketSort time" />
     <MESSAGE value="refactored menu, might clean later" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored menu, might clean later" />
+    <MESSAGE value="made more sense" />
+    <option name="LAST_COMMIT_MESSAGE" value="made more sense" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

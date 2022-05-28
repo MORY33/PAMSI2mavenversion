@@ -25,7 +25,7 @@ public class Main {
                 System.out.println("4 ----> FINISH PROGRAM\n");
                 Scanner sc= new Scanner(System.in);
                 a = sc.nextInt();
-                if (a==1 || a==2 || a==3){
+                if (a==0 || a==1 || a==2 || a==3){
                     shortuj = new Sortit(menu.menu(a));
                     shortuj.runSort();
                     shortuj.compare();
