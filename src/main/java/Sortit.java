@@ -80,7 +80,7 @@ public class Sortit{
 //        Object.printList(oSorter.getSortedArray());
         System.out.println("Merge sort needed: " + oSorter.getTime() + " ms to sort given list\n");
         System.out.println("Mean value: " + getMeanValue());
-        System.out.println("Median value: " + getMedian() +"\n\n");
+        System.out.println("Median value: " + getMedian() +"\n");
 
     }
 
@@ -95,8 +95,24 @@ public class Sortit{
         return mean;
     }
 
+//    public double getMedian(){
+//        double median;
+//
+//        System.out.println("Median for QuickSorted: ");
+//        if (size%2 == 0){
+//            median = (sorter.getQuickSorted().get(size/2).getRating() + sorter.getQuickSorted().get((size/2) - 1).getRating())/2;
+//        }
+//        else {
+//            median = sorter.getQuickSorted().get(size/2).getRating();
+//        }
+//
+//        return median;
+//    }
+
+
     public double getMedian(){
         double median;
+
 
         if (size%2 == 0){
             median = (sorter.getQuickSorted().get(size/2).getRating() + sorter.getQuickSorted().get((size/2) - 1).getRating())/2;
@@ -104,6 +120,24 @@ public class Sortit{
         else {
             median = sorter.getQuickSorted().get(size/2).getRating();
         }
+//        System.out.println("Median for QuickSorted: " + median);
+//
+//        if (size%2 == 0){
+//            median = (mSorter.getMergeSorted().get(size/2).getRating() + mSorter.getMergeSorted().get((size/2) - 1).getRating())/2;
+//        }
+//        else {
+//            median = mSorter.getMergeSorted().get(size/2).getRating();
+//        }
+//        System.out.println("Median for MergeSorted: " + median);
+//
+//        if (size%2 == 0){
+//            median = (oSorter.getOtherSorted().get(size/2).getRating() + oSorter.getOtherSorted().get((size/2) - 1).getRating())/2;
+//        }
+//        else {
+//            median = oSorter.getOtherSorted().get(size/2).getRating();
+//        }
+//        System.out.println("Median for BucketSorted: " + median);
+
 
         return median;
     }

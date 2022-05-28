@@ -25,10 +25,13 @@ public class Main {
                 System.out.println("4 ----> FINISH PROGRAM\n");
                 Scanner sc= new Scanner(System.in);
                 a = sc.nextInt();
-                shortuj = new Sortit(menu.menu(a));
-                shortuj.runSort();
-                shortuj.compare();
+                if (a==1 || a==2 || a==3){
+                    shortuj = new Sortit(menu.menu(a));
+                    shortuj.runSort();
+                    shortuj.compare();
+                }
             }
+
             System.out.println(menu.menu(a));
 //            shortuj = new Sortit(menu.menu(4));
         } catch (IOException e) {
@@ -39,4 +42,5 @@ public class Main {
 
 
     }
+
 }
