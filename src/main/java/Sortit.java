@@ -80,7 +80,7 @@ public class Sortit{
 //        Object.printList(oSorter.getSortedArray());
         System.out.println("Merge sort needed: " + oSorter.getTime() + " ms to sort given list\n");
         System.out.println("Mean value: " + getMeanValue());
-        System.out.println("Median value: " + getMedian());
+        System.out.println("Median value: " + getMedian() +"\n\n");
 
     }
 
