@@ -45,7 +45,7 @@ public class Movie {
     public ArrayList<Movie> CreateList(int row) throws IOException {
 
         Movie tempMovie = new Movie();
-        Movie oneMovie = new Movie();
+        Movie oneMovie;
 
 
         ArrayList<Movie> movieList = new ArrayList<Movie>();

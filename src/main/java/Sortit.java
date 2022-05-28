@@ -6,8 +6,9 @@ import java.util.ArrayList;
 public class Sortit{
 
     private final int id;
-    //    private int id;
     public boolean exit = false;
+    public static final String RESET = "\033[0m";  // Text Reset
+    public static final String CYAN = "\033[0;36m";    // CYAN
 
     public long elapsedTime;
     Algorithm algorithm;
@@ -85,15 +86,15 @@ public class Sortit{
         checkCreatingListTime();
         System.out.println("Algorithm needed " + df.format(getElapsedTime()) + " ms to create and filter list");
         System.out.println("Quick sorted: ");
-//        Object.printList(sorter.getQuickSorted());
+        Object.printList(sorter.getQuickSorted());
         System.out.println("Quick sort needed: " + df.format(sorter.getTime()) +  " ms to sort given list");
 //        mSorter.clearArray();
         System.out.println("Merge sorted: ");
-//        Object.printList(mSorter.getMergeSorted());
+        Object.printList(mSorter.getMergeSorted());
         System.out.println("Merge sort needed: " + df.format(mSorter.getTime()) + " ms to sort given list");
 
         System.out.println("Other sorted: ");
-//        Object.printList(oSorter.getSortedArray());
+        Object.printList(oSorter.getSortedArray());
 
         System.out.println("Merge sort needed: " + df.format(oSorter.getTime()) + " ms to sort given list\n");
         System.out.println("Mean value: " + df.format(getMeanValue()));
@@ -143,10 +144,10 @@ public class Sortit{
 
       if(isEqual(mergeMedian, quickMedian) && isEqual(quickMedian,otherMedian)){
           median = mergeMedian;
-          System.out.println("Medians from all methods are the same!");
+          System.out.println("\033[0;32m" + "Medians from all methods are the same!" + "\033[0m");
       }
       else{
-          System.out.println("Ehh, something is broken and medians are not the same:(");
+          System.out.println("\033[0;31m" + "Ehh, something is broken and medians are not the same:(" + "\033[0m");
       }
 
         return median;
