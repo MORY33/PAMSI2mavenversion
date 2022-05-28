@@ -77,8 +77,8 @@ public class Sortit{
         System.out.println("Merge sort needed: " + mSorter.getTime() + " ms to sort given list");
 
         System.out.println("Other sorted: ");
-        Object.printList(oSorter.getSortedArray());
-
+//        Object.printList(oSorter.getSortedArray());
+        System.out.println("Merge sort needed: " + oSorter.getTime() + " ms to sort given list\n");
         System.out.println("Mean value: " + getMeanValue());
         System.out.println("Median value: " + getMedian());
 

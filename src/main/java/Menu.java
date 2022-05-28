@@ -1,14 +1,14 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Menu {
 
-    public static int menu(){
+    public int menu(){
         System.out.println("Enter option from listed below: ");
-        System.out.println("0 ---> LIST SIZE 7");
+        System.out.println("0 ---> LIST SIZE OF YOUR CHOICE");
         System.out.println("1 ---> LIST SIZE 10 000");
         System.out.println("2 ---> LIST SIZE 100 000");
-        System.out.println("3 ---> LIST SIZE 500 000");
-        System.out.println("4 ---> LIST SIZE 1 000 000\n");
+        System.out.println("3 ---> LIST SIZE OF ALL ELEMENTS (NEARLY 500 000)");
         Scanner sc= new Scanner(System.in);
         int a= sc.nextInt();
 //        System.out.println(a);
@@ -26,12 +26,6 @@ public class Menu {
                 break;
             case 3:
                 listSize=500000;
-                break;
-            case 4:
-                listSize=1000000;
-                break;
-            case 5:
-                listSize=0;
                 break;
             default:
                 listSize=0;

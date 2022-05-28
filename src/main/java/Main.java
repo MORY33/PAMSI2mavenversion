@@ -8,13 +8,16 @@ public class Main {
 
 
         Menu menu = new Menu();
-        Movie movie = new Movie();
-        ArrayList<Movie> arej = new ArrayList<Movie>();
-
+//        Movie movie = new Movie();
+//        ArrayList<Movie> arej = new ArrayList<Movie>();
+        int a=0;
 
 
         Sortit shortuj = null;
         try {
+//            while(a!=5){
+//                menu.menu(a);
+//            }
             shortuj = new Sortit(menu.menu());
         } catch (IOException e) {
             throw new RuntimeException(e);
