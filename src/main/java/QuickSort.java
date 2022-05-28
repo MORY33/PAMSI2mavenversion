@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class QuickSort implements Runnable{
     private int size;
@@ -54,7 +55,15 @@ public class QuickSort implements Runnable{
         return elapsedTime*Math.pow(10, -6);
     }
 
-
+    public boolean isSorted(){
+        boolean sorted = false;
+        for (int i = 0; i < getQuickSorted().size() -1; i++) {
+            if(getQuickSorted().get(i).getRating() > getQuickSorted().get(i+1).getRating()){
+                return sorted;
+            }
+        }
+        return true;
+    }
 
     public void stop()
     {

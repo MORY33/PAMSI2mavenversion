@@ -87,6 +87,16 @@ public class OtherSort implements Runnable {
     }
 
 
+    public boolean isSorted(){
+        boolean sorted = false;
+        for (int i = 0; i < getSortedArray().size() -1; i++) {
+            if(getSortedArray().get(i).getRating() > getSortedArray().get(i+1).getRating()){
+                return sorted;
+            }
+        }
+        return true;
+    }
+
 
     @Override
     public void run() {

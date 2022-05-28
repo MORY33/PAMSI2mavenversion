@@ -7,8 +7,6 @@ public class Sortit{
 
     private final int id;
     public boolean exit = false;
-    public static final String RESET = "\033[0m";  // Text Reset
-    public static final String CYAN = "\033[0;36m";    // CYAN
 
     public long elapsedTime;
     Algorithm algorithm;
@@ -100,6 +98,13 @@ public class Sortit{
         System.out.println("Mean value: " + df.format(getMeanValue()));
         System.out.println("Median value: " + getMedian() +"\n");
 
+        if(sorter.isSorted() && oSorter.isSorted() && mSorter.isSorted()){
+            System.out.println("\033[0;32m" + "Sorted correctly! ✔" + "\033[0m");
+        }
+        else{
+            System.out.println("\033[0;31m" + "In some list sorting gone wrong ⚠" + "\033[0m");
+        }
+
     }
 
 
@@ -144,10 +149,10 @@ public class Sortit{
 
       if(isEqual(mergeMedian, quickMedian) && isEqual(quickMedian,otherMedian)){
           median = mergeMedian;
-          System.out.println("\033[0;32m" + "Medians from all methods are the same!" + "\033[0m");
+          System.out.println("\033[0;32m" + "Medians from all methods are the same! ✔" + "\033[0m");
       }
       else{
-          System.out.println("\033[0;31m" + "Ehh, something is broken and medians are not the same:(" + "\033[0m");
+          System.out.println("\033[0;31m" + "Ehh, something is broken and medians are not the same:( ⚠" + "\033[0m");
       }
 
         return median;

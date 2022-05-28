@@ -98,6 +98,17 @@ public class MergeSort implements Runnable{
     public double getTime(){
        return elapsedTime*Math.pow(10, -6);
     }
+
+
+    public boolean isSorted(){
+        boolean sorted = false;
+        for (int i = 0; i < getMergeSorted().size() -1; i++) {
+            if(getMergeSorted().get(i).getRating() > getMergeSorted().get(i+1).getRating()){
+                return sorted;
+            }
+        }
+        return true;
+    }
     @Override
     public void run() {
         while(!exit){
