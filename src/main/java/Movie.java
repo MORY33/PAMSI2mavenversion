@@ -9,7 +9,7 @@ public class Movie {
     private double rating;
     private String title;
 //    public int counter;
-
+   public double elapsedTime;
     public Movie(String title, double rating) {
         this.title = title;
         this.rating = rating;
@@ -22,6 +22,9 @@ public class Movie {
     }
 
 
+    public double getTime(){
+        return elapsedTime*Math.pow(10, -6);
+    }
     public void setRating(double rating) {
         this.rating = rating;
     }
@@ -40,10 +43,10 @@ public class Movie {
 
 
     public ArrayList<Movie> CreateList(int row) throws IOException {
+
         Movie tempMovie = new Movie();
         Movie oneMovie = new Movie();
 
-//        int row = 5;
 
         ArrayList<Movie> movieList = new ArrayList<Movie>();
 
@@ -86,7 +89,7 @@ public class Movie {
                     continue;
                 }
                 else{
-                    tempMovie.setTitle(values[1]);
+                     tempMovie.setTitle(values[1]);
                     tempMovie.setRating(Double.parseDouble(values[2]));
                     oneMovie = new Movie(tempMovie.getTitle(), tempMovie.getRating());
                     movieList.add(oneMovie);

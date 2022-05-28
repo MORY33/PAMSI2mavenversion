@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.sql.SQLOutput;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Sortit{
@@ -7,6 +8,8 @@ public class Sortit{
     private final int id;
     //    private int id;
     public boolean exit = false;
+
+    public long elapsedTime;
     Algorithm algorithm;
     public ArrayList<Movie> myMovies;
     public Movie Object = new Movie();
@@ -41,6 +44,15 @@ public class Sortit{
         return myMovies;
     }
 
+    public double getElapsedTime() {
+        return (elapsedTime*Math.pow(10, -6));
+    }
+
+    public void checkCreatingListTime() throws IOException {
+        long start = System.nanoTime();
+        Object.CreateList(id);
+        elapsedTime = System.nanoTime() - start;
+    }
 
     public void runSort() throws IOException, InterruptedException{
 
@@ -68,20 +80,23 @@ public class Sortit{
 
 
     public void compare() throws IOException {
+        DecimalFormat df = new DecimalFormat("#.###");
+
+        checkCreatingListTime();
+        System.out.println("Algorithm needed " + df.format(getElapsedTime()) + " ms to create and filter list");
         System.out.println("Quick sorted: ");
 //        Object.printList(sorter.getQuickSorted());
-        System.out.println("Quick sort needed: " + sorter.getTime() +  " ms to sort given list");
+        System.out.println("Quick sort needed: " + df.format(sorter.getTime()) +  " ms to sort given list");
 //        mSorter.clearArray();
         System.out.println("Merge sorted: ");
 //        Object.printList(mSorter.getMergeSorted());
-        System.out.println("Merge sort needed: " + mSorter.getTime() + " ms to sort given list");
+        System.out.println("Merge sort needed: " + df.format(mSorter.getTime()) + " ms to sort given list");
 
         System.out.println("Other sorted: ");
 //        Object.printList(oSorter.getSortedArray());
 
-
-        System.out.println("Merge sort needed: " + oSorter.getTime() + " ms to sort given list\n");
-        System.out.println("Mean value: " + getMeanValue());
+        System.out.println("Merge sort needed: " + df.format(oSorter.getTime()) + " ms to sort given list\n");
+        System.out.println("Mean value: " + df.format(getMeanValue()));
         System.out.println("Median value: " + getMedian() +"\n");
 
     }

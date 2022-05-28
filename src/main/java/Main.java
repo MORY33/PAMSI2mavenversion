@@ -9,7 +9,7 @@ public class Main {
 
 
         Menu menu = new Menu();
-//        Movie movie = new Movie();
+        Movie movie = new Movie();
 //        ArrayList<Movie> arej = new ArrayList<Movie>();
         int a=0;
 
