@@ -1,7 +1,5 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 
 public class Main {
@@ -9,12 +7,9 @@ public class Main {
 
 
         Menu menu = new Menu();
-        Movie movie = new Movie();
-//        ArrayList<Movie> arej = new ArrayList<Movie>();
+        Sortit shortuj;
         int a=0;
 
-
-        Sortit shortuj = null;
         try {
             while(a!=4){
 
@@ -34,7 +29,6 @@ public class Main {
             }
 
             System.out.println(menu.menu(a));
-//            shortuj = new Sortit(menu.menu(4));
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (InterruptedException e) {

@@ -16,9 +16,6 @@ public class Movie {
 
     }
     public Movie() {
-        this.title = title;
-        this.rating = rating;
-
     }
 
 
@@ -58,7 +55,6 @@ public class Movie {
 
         String line = null;
         int counter = 0;
-        int regexCounter = 0;
         String title = "";
         try {
             BufferedReader br = new BufferedReader(new FileReader(path));
@@ -74,7 +70,6 @@ public class Movie {
                 }
 
                 else if (values.length > 3 && values[values.length-1]!= ""){
-//                    tempMovie.setTitle(values[1] + values[values.length-2]);
 
                     for (int i=1; i<= values.length-2;i++){
                         helpful = values[i];
@@ -104,7 +99,6 @@ public class Movie {
         catch (IOException e) {
             e.printStackTrace();
         }
-//        printList(movieList);
         return movieList;
     }
 

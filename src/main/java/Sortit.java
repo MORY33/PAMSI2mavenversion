@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -9,14 +8,13 @@ public class Sortit{
     public boolean exit = false;
 
     public long elapsedTime;
-    Algorithm algorithm;
     public ArrayList<Movie> myMovies;
     public Movie Object = new Movie();
 
     public QuickSort sorter;
     public MergeSort mSorter;
     public OtherSort oSorter;
-    private int size;
+    private final int size;
 
 
 
@@ -27,8 +25,6 @@ public class Sortit{
 
     public Sortit(int id) throws IOException {
         this.id = id;
-//        myMovies = Object.CreateList(id);
-//        sorter = new QuickSort(myMovies, myMovies.size());
         size  = Object.CreateList(id).size();
         sorter = new QuickSort(Object.CreateList(id), Object.CreateList(id).size());
         mSorter = new MergeSort(Object.CreateList(id), Object.CreateList(id).size());
@@ -39,9 +35,7 @@ public class Sortit{
         return Object;
     }
 
-    public ArrayList<Movie> getArrayAfterSorting() {
-        return myMovies;
-    }
+
 
     public double getElapsedTime() {
         return (elapsedTime*Math.pow(10, -6));
@@ -84,16 +78,10 @@ public class Sortit{
         checkCreatingListTime();
         System.out.println("Algorithm needed " + df.format(getElapsedTime()) + " ms to create and filter list");
         System.out.println("Quick sorted: ");
-        Object.printList(sorter.getQuickSorted());
         System.out.println("Quick sort needed: " + df.format(sorter.getTime()) +  " ms to sort given list");
-//        mSorter.clearArray();
         System.out.println("Merge sorted: ");
-        Object.printList(mSorter.getMergeSorted());
         System.out.println("Merge sort needed: " + df.format(mSorter.getTime()) + " ms to sort given list");
-
         System.out.println("Other sorted: ");
-        Object.printList(oSorter.getSortedArray());
-
         System.out.println("Merge sort needed: " + df.format(oSorter.getTime()) + " ms to sort given list\n");
         System.out.println("Mean value: " + df.format(getMeanValue()));
         System.out.println("Median value: " + getMedian() +"\n");
@@ -162,10 +150,7 @@ public class Sortit{
 
         double epsilon = 0.000001d;
 
-        if (Math.abs(a-b) < epsilon) {
-            return true;
-        }
-        return false;
+        return Math.abs(a - b) < epsilon;
     }
 
     public void stop()
@@ -173,12 +158,5 @@ public class Sortit{
        exit = true;
     }
 
-    public ArrayList<Movie> getMyMovies() {
-        return myMovies;
-    }
-
-    public Algorithm getAlgorithm() {
-        return algorithm;
-    }
 
 }
