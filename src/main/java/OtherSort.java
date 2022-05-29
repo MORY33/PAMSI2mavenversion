@@ -4,19 +4,18 @@ import java.util.ArrayList;
 
 public class OtherSort implements Runnable {
     private final int size;
-    private int bucketsQuantity;
-    private double max;
+    private final int bucketsQuantity;
+    private final double max;
     public long elapsedTime;
-    private ArrayList<Movie> otherSorted;
+    private final ArrayList<Movie> otherSorted;
 
     public ArrayList<ArrayList<Movie>> buckets;
 
     ArrayList<Movie> sortedArray = new ArrayList<>();
 
     public boolean exit;
-    private MergeSort mergesort;
 
-    public OtherSort(ArrayList<Movie> otherSorted, int size) throws IOException {
+    public OtherSort(ArrayList<Movie> otherSorted, int size){
         this.otherSorted = otherSorted;
         this.size = size;
         bucketsQuantity = (int) Math.sqrt(otherSorted.size());
@@ -36,7 +35,7 @@ public class OtherSort implements Runnable {
         }
 
         for(ArrayList<Movie> bucket  : buckets){
-            mergesort = new MergeSort(bucket, bucket.size());
+            MergeSort mergesort = new MergeSort(bucket, bucket.size());
             mergesort.divideArrayElements(0, bucket.size() - 1);
         }
 

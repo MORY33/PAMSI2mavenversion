@@ -1,40 +1,19 @@
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class MergeSort implements Runnable{
     private final int size;
-    private ArrayList<Movie> mergeSorted;
+    private final ArrayList<Movie> mergeSorted;
 
     public boolean exit;
 
     public long elapsedTime;
 
-    public MergeSort(ArrayList<Movie> mergeSorted, int size) throws IOException {
+    public MergeSort(ArrayList<Movie> mergeSorted, int size){
         this.mergeSorted = mergeSorted;
         this.size = size;
     }
 
-    public int getSize() {
-        return size;
-    }
 
-    public void clearArray(){
-        mergeSorted = null;
-    }
-
-
-    Movie bnt = new Movie("Bnt fchuj", 6);
-
-    public void addMovie() {
-//        mergeSorted = mergeSorted.add(10, "bntfchuj");
-        Movie oneMovie = new Movie("Bnt fest", 9);
-        mergeSorted.add(oneMovie);
-    }
-
-
-    public ArrayList<Movie> getMergeSorted() {
-        return mergeSorted;
-    }
 
     public void divideArrayElements(int indexStart, int indexEnd) {
 
@@ -50,9 +29,7 @@ public class MergeSort implements Runnable{
 
     public void mergeArrayElements(int indexStart, int indexMiddle, int indexEnd) {
 
-        ArrayList<Movie> tempArray = new ArrayList<Movie>();
-//        ArrayList<Movie> tempmovies = new ArrayList<Movie>();
-//        tempmovies = myMovies;
+        ArrayList<Movie> tempArray = new ArrayList<>();
 
         int getLeftIndex = indexStart;
         int getRightIndex = indexMiddle + 1;
@@ -90,15 +67,6 @@ public class MergeSort implements Runnable{
 
     }
 
-    public void stop()
-    {
-        exit = true;
-    }
-
-    public double getTime(){
-       return elapsedTime*Math.pow(10, -6);
-    }
-
 
     public boolean isSorted(){
         boolean sorted = false;
@@ -109,6 +77,26 @@ public class MergeSort implements Runnable{
         }
         return true;
     }
+
+    public void stop()
+    {
+        exit = true;
+    }
+
+    public double getTime(){
+       return elapsedTime*Math.pow(10, -6);
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public ArrayList<Movie> getMergeSorted() {
+        return mergeSorted;
+    }
+
+
+
     @Override
     public void run() {
         while(!exit){

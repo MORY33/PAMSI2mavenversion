@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 public class Sortit{
 
@@ -8,7 +7,6 @@ public class Sortit{
     public boolean exit = false;
 
     public long elapsedTime;
-    public ArrayList<Movie> myMovies;
     public Movie Object = new Movie();
 
     public QuickSort sorter;
