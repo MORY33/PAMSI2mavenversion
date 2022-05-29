@@ -8,8 +8,6 @@ import java.util.Objects;
 public class Movie {
     private double rating;
     private String title;
-//    public int counter;
-   public double elapsedTime;
     public Movie(String title, double rating) {
         this.title = title;
         this.rating = rating;
@@ -19,9 +17,6 @@ public class Movie {
     }
 
 
-    public double getTime(){
-        return elapsedTime*Math.pow(10, -6);
-    }
     public void setRating(double rating) {
         this.rating = rating;
     }
@@ -47,11 +42,11 @@ public class Movie {
 
         ArrayList<Movie> movieList = new ArrayList<>();
 
+        String currentWorkingDir = System.getProperty("user.dir");
+        currentWorkingDir+="\\src\\main\\resources\\dane.csv";
 
-
-        String path = "C:\\Users\\rafal\\Documents\\STUDIA\\SEM4\\PAMSI\\PAMSI2mavenversion\\src\\main\\java\\dane.csv";
-
-
+//        String path = "C:\\Users\\rafal\\Documents\\STUDIA\\SEM4\\PAMSI\\PAMSI2mavenversion\\src\\main\\resources\\dane.csv";
+        String path = currentWorkingDir;
 
         String line;
         int counter = 0;
