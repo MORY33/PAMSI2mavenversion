@@ -1,9 +1,9 @@
-import javax.management.StringValueExp;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Movie {
     private double rating;
@@ -39,13 +39,13 @@ public class Movie {
     }
 
 
-    public ArrayList<Movie> CreateList(int row) throws IOException {
+    public ArrayList<Movie> CreateList(int row){
 
         Movie tempMovie = new Movie();
         Movie oneMovie;
 
 
-        ArrayList<Movie> movieList = new ArrayList<Movie>();
+        ArrayList<Movie> movieList = new ArrayList<>();
 
 
 
@@ -53,7 +53,7 @@ public class Movie {
 
 
 
-        String line = null;
+        String line;
         int counter = 0;
         String title = "";
         try {
@@ -65,11 +65,11 @@ public class Movie {
                 String[] values = line.split(",");
                 String helpful;
 
-                if (values[values.length-1]=="" || !values[values.length-1].endsWith(".0")){
+                if (Objects.equals(values[values.length - 1], "") || !values[values.length-1].endsWith(".0")){
                     continue;
                 }
 
-                else if (values.length > 3 && values[values.length-1]!= ""){
+                else if (values.length > 3 && !Objects.equals(values[values.length - 1], "")){
 
                     for (int i=1; i<= values.length-2;i++){
                         helpful = values[i];
@@ -80,7 +80,7 @@ public class Movie {
                     oneMovie = new Movie(tempMovie.getTitle(), tempMovie.getRating());
                     movieList.add(oneMovie);
                 }
-                else if (3 > values.length || values[1]=="" || values[2]==""){
+                else if (3 > values.length || Objects.equals(values[1], "") || Objects.equals(values[2], "")){
                     continue;
                 }
                 else{
@@ -108,7 +108,6 @@ public class Movie {
         for(Movie name: list) {
             System.out.println(name.getTitle() + " : " + name.getRating());
         }
-        System.out.println("");
     }
 
 

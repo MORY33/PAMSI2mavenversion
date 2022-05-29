@@ -29,21 +29,6 @@ public class Sortit{
         oSorter = new OtherSort(Object.CreateList(id), Object.CreateList(id).size());
     }
 
-    public Movie getObject() {
-        return Object;
-    }
-
-
-
-    public double getElapsedTime() {
-        return (elapsedTime*Math.pow(10, -6));
-    }
-
-    public void checkCreatingListTime() throws IOException {
-        long start = System.nanoTime();
-        Object.CreateList(id);
-        elapsedTime = System.nanoTime() - start;
-    }
 
     public void runSort() throws IOException, InterruptedException{
 
@@ -74,7 +59,7 @@ public class Sortit{
         DecimalFormat df = new DecimalFormat("#.###");
 
         checkCreatingListTime();
-        System.out.println("Algorithm needed " + df.format(getElapsedTime()) + " ms to create and filter list");
+        System.out.println("\033[0;32m" + "Algorithm needed " + df.format(getElapsedTime()) + " ms to create and filter list\n" + "\033[0m");
         System.out.println("Quick sorted: ");
         System.out.println("Quick sort needed: " + df.format(sorter.getTime()) +  " ms to sort given list");
         System.out.println("Merge sorted: ");
@@ -94,7 +79,7 @@ public class Sortit{
     }
 
 
-    public double getMeanValue() throws IOException {
+    public double getMeanValue(){
         double mean;
         double ratings = 0;
         for (Movie objects : Object.CreateList(id)){
@@ -144,6 +129,20 @@ public class Sortit{
         return median;
     }
 
+
+    public Movie getObject() {
+        return Object;
+    }
+
+    public double getElapsedTime() {
+        return (elapsedTime*Math.pow(10, -6));
+    }
+
+    public void checkCreatingListTime(){
+        long start = System.nanoTime();
+        Object.CreateList(id);
+        elapsedTime = System.nanoTime() - start;
+    }
     public boolean isEqual(double a, double b){
 
         double epsilon = 0.000001d;

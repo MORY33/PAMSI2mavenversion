@@ -1,31 +1,24 @@
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class QuickSort implements Runnable{
-    private int size;
-    private ArrayList<Movie> quickSorted;
+    private final int size;
+    private final ArrayList<Movie> quickSorted;
 
     public long elapsedTime;
     public boolean exit;
-    public QuickSort(ArrayList<Movie> quickSorted, int size) throws IOException {
+    public QuickSort(ArrayList<Movie> quickSorted, int size){
         this.quickSorted = quickSorted;
         this.size = size;
     }
 
 
-    public int getSize() {
-        return size;
-    }
+    public void quickShort(int left, int right) {
+        int i = left;
+        int j = right;
 
 
-    public void quickShort(int lewy, int prawy) {
-        int i = lewy;
-        int j = prawy;
-
-
-        double pivot = quickSorted.get(prawy).getRating();
+        double pivot = quickSorted.get(right).getRating();
 
         do
         {
@@ -39,12 +32,9 @@ public class QuickSort implements Runnable{
             }
         } while (i<=j);
 
-        if (j > lewy) quickShort(lewy, j);// rekursywanie wywolujemy z lewej
-        if (i < prawy) quickShort(i, prawy);// rekursywanie wywolujemy z prawej
-//        Object.printList(myMovies);
-//        Object.printList(tempmovies);
-//        System.out.println("sorted");
-//        stop();
+        if (j > left) quickShort(left, j);// recursively from left
+        if (i < right) quickShort(i, right);// recursively from right
+//
     }
 
     public ArrayList<Movie> getQuickSorted() {
@@ -68,6 +58,10 @@ public class QuickSort implements Runnable{
     public void stop()
     {
         exit = true;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     @Override
